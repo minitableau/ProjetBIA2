@@ -1,0 +1,113 @@
+table 'Data Sales Nike'
+	lineageTag: 412b62ea-e2f6-4746-a6ef-ce0af0bb1d16
+
+	column Column1
+		dataType: string
+		lineageTag: d3895644-37f1-4758-ab9c-22328a6b123a
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: d9da467f-f11f-4ebe-8616-6ba1c3cddcc7
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 97a3dd00-08d8-439c-83cd-407eaf25c8d7
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 163c184e-8635-495e-bddf-097e12aa2c87
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 9e20e8d3-3cf7-42f2-9e3e-dc94e7db0102
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: 48d75543-072a-4809-adc8-79a725fbf48f
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: dd9e25bb-1ee5-4883-a5d0-098d0b2d1160
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: 704d5ba7-2d40-4d82-a162-d995a273f7c3
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: 0b1e11da-0754-4eb2-9949-7e3c1676e297
+		summarizeBy: none
+		sourceColumn: Column9
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column10
+		dataType: string
+		lineageTag: 20191d14-a542-43e7-acb6-9780b192c97f
+		summarizeBy: none
+		sourceColumn: Column10
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column11
+		dataType: string
+		lineageTag: f9a1ab29-61fa-44ec-abf3-a1577d1d6097
+		summarizeBy: none
+		sourceColumn: Column11
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column12
+		dataType: string
+		lineageTag: 7c4b28b9-3af5-45c1-9951-934cf1491ab0
+		summarizeBy: none
+		sourceColumn: Column12
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Data Sales Nike' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\alexa\OneDrive\Documents\A2\DataSet\DataSet\ProjetBIA2\Nike US Sales Datasets.xlsx"), null, true),
+				    #"Data Sales Nike_Sheet" = Source{[Item="Data Sales Nike",Kind="Sheet"]}[Data],
+				    #"Type modifié" = Table.TransformColumnTypes(#"Data Sales Nike_Sheet",{{"Column1", type text}, {"Column2", type any}, {"Column3", type any}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type text}, {"Column11", type text}, {"Column12", type text}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

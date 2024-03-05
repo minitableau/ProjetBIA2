@@ -1,0 +1,23 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Data Sales Adidas","Data Sales Nike","nike_2020_04_13"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.126.1261.0 (24.02)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Data Sales Adidas'
+ref table DateTableTemplate_8f109c5c-ce11-4d4f-8ba0-85499d4644a4
+ref table LocalDateTable_4aff2bea-f5f8-4a7e-90cf-fa595f43a9a5
+ref table 'Data Sales Nike'
+ref table nike_2020_04_13
+ref table LocalDateTable_09bb1d4e-4c3e-41fe-ad34-5d5fd29373f3
+
